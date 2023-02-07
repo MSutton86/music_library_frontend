@@ -1,28 +1,36 @@
-const MusicTable = (props) => {
-  return (
-    <section id="music">
-      <h1>Music Table</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Album</th>
-            <th>Artis</th>
-            <th>Release Date</th>
-            <th>Genre</th>
-          </tr>
-        </thead>
-        <tbody>
+import { scryRenderedComponentsWithType } from "react-dom/test-utils";
+
+const MusicTable = ( {music: musics} ) => {
+    const rows = musics.map(music => {
+        return (
+        <tr>
+        <td>{music.title}</td>
+        <td>{music.album}</td>
+        <td>{music.artist}</td>
+        <td>{music.release_date}</td>
+        <td>{music.genre}</td>
+        </tr>
+        );
+    });
+
+    return (
+        <section id="music">
+        <h1>Music Table</h1>
+        <table>
+            <thead>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <th>Title</th>
+                <th>Album</th>
+                <th>Artist</th>
+                <th>Release Date</th>
+                <th>Genre</th>
             </tr>
-        </tbody>
-      </table>
-    </section>
+            </thead>
+            <tbody>
+                {rows}
+            </tbody>
+        </table>
+        </section>
   );
 };
 

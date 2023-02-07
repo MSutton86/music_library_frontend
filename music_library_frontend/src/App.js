@@ -14,14 +14,14 @@ function App() {
     fetchMusic();
   }, []);
 
-  console.log('music list: ', music)
+  console.log('music list: ', music);
 
   return(
     <div>
       <h1>Music Library</h1>
-      <MusicTable/>
+      <MusicTable music={music}/>
     </div>
-  )
+  );
 }
 
 export default App;
