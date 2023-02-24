@@ -10,14 +10,21 @@ function App() {
     const response = await axios.get('http://127.0.0.1:8000/api/music/');
     setMusic(response.data);
   }
+  
+  
+  async function addMusic(newMusic){
+    const response = await axios.post('http://127.0.0.1:8000/api/music/', newMusic);
+  }
+  
+  
   useEffect(() => {
     fetchMusic();
   }, []);
 
-  console.log('music list: ', music);
-
+  
   return(
     <div>
+      console.log('music list: ', music);
       <h1>Music Library</h1>
       <MusicTable music={music}/>
     </div>

@@ -3,7 +3,7 @@ import { scryRenderedComponentsWithType } from "react-dom/test-utils";
 const MusicTable = ( {music: musics} ) => {
     const rows = musics.map(music => {
         return (
-        <tr>
+        <tr key={music.id}>
         <td>{music.title}</td>
         <td>{music.album}</td>
         <td>{music.artist}</td>
