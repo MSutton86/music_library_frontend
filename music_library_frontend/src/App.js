@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import MusicTable from './MusicTable/MusicTable';
+import AddMusic from './AddMusic/AddMusic';
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
     <div>
       <h1>Music Library</h1>
       <MusicTable music={music}/>
-      console.log('music list: ', music);
+      <AddMusic newMusic={music}/>
+      ('music list: ', music);
     </div>
   );
 }

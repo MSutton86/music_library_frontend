@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const AddMusic = ({musics}) => {
+const AddMusic = ({music:musics}) => {
     const [title, setTitle] = useState("");
     const [artist, setArtist] = useState("");
     const [album, setAlbum] = useState("");
@@ -51,7 +51,7 @@ const AddMusic = ({musics}) => {
                 value={genre}
                 onChange={(event) => setGenre(event.target.value)}/>
             </div>
-            
+            <button type='submit'>Add Music</button>
         </form>
      );
 }
