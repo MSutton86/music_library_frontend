@@ -1,11 +1,24 @@
 import React, { useState, useEffect } from 'react';
 
-const AddMusic = ({music}) => {
+const AddMusic = ({musics}) => {
     const [title, setTitle] = useState("");
     const [artist, setArtist] = useState("");
     const [album, setAlbum] = useState("");
     const [release_date, setReleaseDate] = useState("");
     const [genre, setGenre] = useState("");
+
+    function handleSubmit(event) {
+    event.preventDefault();
+    let newMusic = {
+        title: title,
+        artist: artist,
+        album: album,
+        release_date: release_date,
+        genre: genre
+    };
+    musics.newMusic(newMusic);
+    }
+
     return ( 
         <form onSubmit={handleSubmit}>
             <div>
@@ -35,7 +48,8 @@ const AddMusic = ({music}) => {
                 <label>Genre</label>
                 <input
                 type='text'
-                value={(event) => setGenre(event.target.value)}/>
+                value={genre}
+                onChange={(event) => setGenre(event.target.value)}/>
             </div>
             
         </form>
