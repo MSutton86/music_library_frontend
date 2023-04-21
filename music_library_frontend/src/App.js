@@ -24,9 +24,9 @@ function App() {
   
   return(
     <div>
-      console.log('music list: ', music);
       <h1>Music Library</h1>
       <MusicTable music={music}/>
+      console.log('music list: ', music);
     </div>
   );
 }

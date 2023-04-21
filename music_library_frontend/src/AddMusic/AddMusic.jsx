@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-const AddMusic = () => {
+const AddMusic = ({music}) => {
+    const [title, setTitle] = useState("");
+    const [artist, setArtist] = useState("");
+    const [album, setAlbum] = useState("");
+    const [release_date, setReleaseDate] = useState("");
+    const [genre, setGenre] = useState("");
     return ( 
-        <form>
+        <form onSubmit={handleSubmit}>
+            <div>
+                
+            </div>
             
         </form>
      );
